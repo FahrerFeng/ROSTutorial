@@ -1,2 +1,2 @@
-learning_communication
+custom_msg_topic:learning_communication
 -DCATKIN_DEVEL_PREFIX=/home/yufeifeng/workspace/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yufeifeng/workspace/catkin_ws/install -G Unix Makefiles

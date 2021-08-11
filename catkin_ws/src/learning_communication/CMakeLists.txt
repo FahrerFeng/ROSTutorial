@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.0.2)
+# cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 2.8.3)
 project(learning_communication)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
@@ -47,7 +48,7 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
+#add_message_files(
 #   FILES
 #   Message1.msg
 #   Message2.msg
@@ -148,7 +149,7 @@ add_dependencies(talker ${PROJECT_NAME}_generate_messages_cpp)
 
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
-add_dependencies(talker ${PROJECT_NAME}_generate_messages_cpp)
+add_dependencies(listener ${PROJECT_NAME}_generate_messages_cpp)
 
 #############
 ## Install ##

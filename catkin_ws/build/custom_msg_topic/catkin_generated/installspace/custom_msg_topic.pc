@@ -1,0 +1,8 @@
+prefix=/home/yufeifeng/workspace/catkin_ws/install
+
+Name: custom_msg_topic
+Description: Description of custom_msg_topic
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lcustom_msg_topic
+Requires: message_runtime roscpp
