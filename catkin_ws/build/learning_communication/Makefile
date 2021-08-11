@@ -68,29 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -114,16 +91,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -134,6 +101,39 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+learning_communication/CMakeFiles/server.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/server.dir/rule
+.PHONY : learning_communication/CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: learning_communication/CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/server.dir/build.make learning_communication/CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+# Convenience name for target.
 learning_communication/CMakeFiles/listener.dir/rule:
 	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/listener.dir/rule
 .PHONY : learning_communication/CMakeFiles/listener.dir/rule
@@ -183,6 +198,246 @@ listener/fast:
 .PHONY : listener/fast
 
 # Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_genpy.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_genpy.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_genpy.dir/rule
+
+# Convenience name for target.
+learning_communication_genpy: learning_communication/CMakeFiles/learning_communication_genpy.dir/rule
+
+.PHONY : learning_communication_genpy
+
+# fast build rule for target.
+learning_communication_genpy/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_genpy.dir/build.make learning_communication/CMakeFiles/learning_communication_genpy.dir/build
+.PHONY : learning_communication_genpy/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : learning_communication/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: learning_communication/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make learning_communication/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/_learning_communication_generate_messages_check_deps_AddTwoInts.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/_learning_communication_generate_messages_check_deps_AddTwoInts.dir/rule
+.PHONY : learning_communication/CMakeFiles/_learning_communication_generate_messages_check_deps_AddTwoInts.dir/rule
+
+# Convenience name for target.
+_learning_communication_generate_messages_check_deps_AddTwoInts: learning_communication/CMakeFiles/_learning_communication_generate_messages_check_deps_AddTwoInts.dir/rule
+
+.PHONY : _learning_communication_generate_messages_check_deps_AddTwoInts
+
+# fast build rule for target.
+_learning_communication_generate_messages_check_deps_AddTwoInts/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/_learning_communication_generate_messages_check_deps_AddTwoInts.dir/build.make learning_communication/CMakeFiles/_learning_communication_generate_messages_check_deps_AddTwoInts.dir/build
+.PHONY : _learning_communication_generate_messages_check_deps_AddTwoInts/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : learning_communication/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: learning_communication/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make learning_communication/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : learning_communication/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: learning_communication/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make learning_communication/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : learning_communication/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: learning_communication/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make learning_communication/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_gencpp.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_gencpp.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_gencpp.dir/rule
+
+# Convenience name for target.
+learning_communication_gencpp: learning_communication/CMakeFiles/learning_communication_gencpp.dir/rule
+
+.PHONY : learning_communication_gencpp
+
+# fast build rule for target.
+learning_communication_gencpp/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_gencpp.dir/build.make learning_communication/CMakeFiles/learning_communication_gencpp.dir/build
+.PHONY : learning_communication_gencpp/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_genlisp.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_genlisp.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_genlisp.dir/rule
+
+# Convenience name for target.
+learning_communication_genlisp: learning_communication/CMakeFiles/learning_communication_genlisp.dir/rule
+
+.PHONY : learning_communication_genlisp
+
+# fast build rule for target.
+learning_communication_genlisp/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_genlisp.dir/build.make learning_communication/CMakeFiles/learning_communication_genlisp.dir/build
+.PHONY : learning_communication_genlisp/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : learning_communication/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: learning_communication/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make learning_communication/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_generate_messages_cpp.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_generate_messages_cpp.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+learning_communication_generate_messages_cpp: learning_communication/CMakeFiles/learning_communication_generate_messages_cpp.dir/rule
+
+.PHONY : learning_communication_generate_messages_cpp
+
+# fast build rule for target.
+learning_communication_generate_messages_cpp/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_generate_messages_cpp.dir/build.make learning_communication/CMakeFiles/learning_communication_generate_messages_cpp.dir/build
+.PHONY : learning_communication_generate_messages_cpp/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_gennodejs.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_gennodejs.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_gennodejs.dir/rule
+
+# Convenience name for target.
+learning_communication_gennodejs: learning_communication/CMakeFiles/learning_communication_gennodejs.dir/rule
+
+.PHONY : learning_communication_gennodejs
+
+# fast build rule for target.
+learning_communication_gennodejs/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_gennodejs.dir/build.make learning_communication/CMakeFiles/learning_communication_gennodejs.dir/build
+.PHONY : learning_communication_gennodejs/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_generate_messages_eus.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_generate_messages_eus.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+learning_communication_generate_messages_eus: learning_communication/CMakeFiles/learning_communication_generate_messages_eus.dir/rule
+
+.PHONY : learning_communication_generate_messages_eus
+
+# fast build rule for target.
+learning_communication_generate_messages_eus/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_generate_messages_eus.dir/build.make learning_communication/CMakeFiles/learning_communication_generate_messages_eus.dir/build
+.PHONY : learning_communication_generate_messages_eus/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/client.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/client.dir/rule
+.PHONY : learning_communication/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: learning_communication/CMakeFiles/client.dir/rule
+
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/client.dir/build.make learning_communication/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_geneus.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_geneus.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_geneus.dir/rule
+
+# Convenience name for target.
+learning_communication_geneus: learning_communication/CMakeFiles/learning_communication_geneus.dir/rule
+
+.PHONY : learning_communication_geneus
+
+# fast build rule for target.
+learning_communication_geneus/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_geneus.dir/build.make learning_communication/CMakeFiles/learning_communication_geneus.dir/build
+.PHONY : learning_communication_geneus/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_generate_messages_lisp.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_generate_messages_lisp.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+learning_communication_generate_messages_lisp: learning_communication/CMakeFiles/learning_communication_generate_messages_lisp.dir/rule
+
+.PHONY : learning_communication_generate_messages_lisp
+
+# fast build rule for target.
+learning_communication_generate_messages_lisp/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_generate_messages_lisp.dir/build.make learning_communication/CMakeFiles/learning_communication_generate_messages_lisp.dir/build
+.PHONY : learning_communication_generate_messages_lisp/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_generate_messages_nodejs.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_generate_messages_nodejs.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+learning_communication_generate_messages_nodejs: learning_communication/CMakeFiles/learning_communication_generate_messages_nodejs.dir/rule
+
+.PHONY : learning_communication_generate_messages_nodejs
+
+# fast build rule for target.
+learning_communication_generate_messages_nodejs/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_generate_messages_nodejs.dir/build.make learning_communication/CMakeFiles/learning_communication_generate_messages_nodejs.dir/build
+.PHONY : learning_communication_generate_messages_nodejs/fast
+
+# Convenience name for target.
 learning_communication/CMakeFiles/talker.dir/rule:
 	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/talker.dir/rule
 .PHONY : learning_communication/CMakeFiles/talker.dir/rule
@@ -196,6 +451,63 @@ talker: learning_communication/CMakeFiles/talker.dir/rule
 talker/fast:
 	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/talker.dir/build.make learning_communication/CMakeFiles/talker.dir/build
 .PHONY : talker/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_generate_messages.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_generate_messages.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_generate_messages.dir/rule
+
+# Convenience name for target.
+learning_communication_generate_messages: learning_communication/CMakeFiles/learning_communication_generate_messages.dir/rule
+
+.PHONY : learning_communication_generate_messages
+
+# fast build rule for target.
+learning_communication_generate_messages/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_generate_messages.dir/build.make learning_communication/CMakeFiles/learning_communication_generate_messages.dir/build
+.PHONY : learning_communication_generate_messages/fast
+
+# Convenience name for target.
+learning_communication/CMakeFiles/learning_communication_generate_messages_py.dir/rule:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 learning_communication/CMakeFiles/learning_communication_generate_messages_py.dir/rule
+.PHONY : learning_communication/CMakeFiles/learning_communication_generate_messages_py.dir/rule
+
+# Convenience name for target.
+learning_communication_generate_messages_py: learning_communication/CMakeFiles/learning_communication_generate_messages_py.dir/rule
+
+.PHONY : learning_communication_generate_messages_py
+
+# fast build rule for target.
+learning_communication_generate_messages_py/fast:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/learning_communication_generate_messages_py.dir/build.make learning_communication/CMakeFiles/learning_communication_generate_messages_py.dir/build
+.PHONY : learning_communication_generate_messages_py/fast
+
+src/client.o: src/client.cpp.o
+
+.PHONY : src/client.o
+
+# target to build an object file
+src/client.cpp.o:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/client.dir/build.make learning_communication/CMakeFiles/client.dir/src/client.cpp.o
+.PHONY : src/client.cpp.o
+
+src/client.i: src/client.cpp.i
+
+.PHONY : src/client.i
+
+# target to preprocess a source file
+src/client.cpp.i:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/client.dir/build.make learning_communication/CMakeFiles/client.dir/src/client.cpp.i
+.PHONY : src/client.cpp.i
+
+src/client.s: src/client.cpp.s
+
+.PHONY : src/client.s
+
+# target to generate assembly for a file
+src/client.cpp.s:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/client.dir/build.make learning_communication/CMakeFiles/client.dir/src/client.cpp.s
+.PHONY : src/client.cpp.s
 
 src/listener.o: src/listener.cpp.o
 
@@ -223,6 +535,33 @@ src/listener.s: src/listener.cpp.s
 src/listener.cpp.s:
 	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/listener.dir/build.make learning_communication/CMakeFiles/listener.dir/src/listener.cpp.s
 .PHONY : src/listener.cpp.s
+
+src/server.o: src/server.cpp.o
+
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.cpp.o:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/server.dir/build.make learning_communication/CMakeFiles/server.dir/src/server.cpp.o
+.PHONY : src/server.cpp.o
+
+src/server.i: src/server.cpp.i
+
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.cpp.i:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/server.dir/build.make learning_communication/CMakeFiles/server.dir/src/server.cpp.i
+.PHONY : src/server.cpp.i
+
+src/server.s: src/server.cpp.s
+
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.cpp.s:
+	cd /home/yufeifeng/workspace/catkin_ws/build && $(MAKE) -f learning_communication/CMakeFiles/server.dir/build.make learning_communication/CMakeFiles/server.dir/src/server.cpp.s
+.PHONY : src/server.cpp.s
 
 src/talker.o: src/talker.cpp.o
 
@@ -258,17 +597,42 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
-	@echo "... listener"
-	@echo "... rebuild_cache"
-	@echo "... talker"
 	@echo "... install/local"
+	@echo "... server"
+	@echo "... listener"
+	@echo "... learning_communication_genpy"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... _learning_communication_generate_messages_check_deps_AddTwoInts"
 	@echo "... test"
-	@echo "... list_install_components"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... edit_cache"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... learning_communication_gencpp"
+	@echo "... list_install_components"
+	@echo "... learning_communication_genlisp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... rebuild_cache"
+	@echo "... learning_communication_generate_messages_cpp"
+	@echo "... install"
+	@echo "... learning_communication_gennodejs"
+	@echo "... learning_communication_generate_messages_eus"
+	@echo "... client"
+	@echo "... learning_communication_geneus"
+	@echo "... learning_communication_generate_messages_lisp"
+	@echo "... learning_communication_generate_messages_nodejs"
+	@echo "... talker"
+	@echo "... learning_communication_generate_messages"
+	@echo "... learning_communication_generate_messages_py"
+	@echo "... src/client.o"
+	@echo "... src/client.i"
+	@echo "... src/client.s"
 	@echo "... src/listener.o"
 	@echo "... src/listener.i"
 	@echo "... src/listener.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 	@echo "... src/talker.o"
 	@echo "... src/talker.i"
 	@echo "... src/talker.s"
